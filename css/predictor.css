@@ -3,8 +3,8 @@
     width: auto;
     margin-left: auto;
     margin-right: auto;
-    color: #0900C4;
-    background-color: rgba(248, 228, 104, 0.71);
+    color: rgba(26, 87, 166, 1);
+    background-color: rgba(214, 230, 242, 1);
     font-size: 12pt;
     -webkit-border-bottom-left-radius: 15px;
     -webkit-border-bottom-right-radius: 15px;
@@ -14,7 +14,6 @@
     -moz-border-radius-bottomright: 15px;
     -moz-border-radius-topleft: 15px;
     -moz-border-radius-topright: 15pxs;
-
 }
 
 #wrapper .child1 {
