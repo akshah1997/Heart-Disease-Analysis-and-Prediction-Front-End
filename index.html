@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/styles-merged.css">
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/predictor.css">
 
     <!--[if lt IE 9]>
       <script src="js/vendor/html5shiv.min.js"></script>
@@ -16,6 +17,7 @@
     <![endif]-->
   </head>
   <body>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
 
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default probootstrap-navbar">
@@ -173,48 +175,291 @@ this date.</p></p>
             <p>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart disease based on those values.</p>
           </div>
         </div>
-        <!-- END row -->
-        <div class="row">
-          <div class="col-md-4">
-            <div class="probootstrap-pricing">
-              <h2>Starter</h2>
-              <p class="probootstrap-price"><strong>$22.99</strong></p>
-              <p class="probootstrap-note">This is a monthly recurring payment.</p>
-              <ul class="probootstrap-list text-left mb50">
-                <li class="probootstrap-check">Pointing has no control</li>
-                <li class="probootstrap-check">A small river named Duden flows</li>
-                <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-              </ul>
-              <p><a href="#" class="btn btn-black">Get Started</a></p>
-            </div>
+    <!-- END row -->
+        <!-- Main Div -->
+        <div id="parent">
+
+              <div id="wrapper">
+
+                  <center>
+                      <h1 style="color:deeppink ">Heart Disease Predictor</h1>
+                  </center>
+
+                  <div class="child1">
+
+                      <table class="naked_table">
+                          <tr>
+                              <td>
+                                  <label class="before_slider">
+                                      Sex (0=female,1=male)</label></td>
+                              <td class="input_slider">
+                                  <form class="slider_input">
+                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="1" step="1"
+                                             value="0" id="nSex1" oninput="this.form.amountInput.value=this.value" />
+                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="1" step="1"
+                                             value="0" id="nSex2" oninput="this.form.amountRange.value=this.value" />
+                                  </form></td>
+                          </tr>
+
+                          <tr>
+                              <td><label for="nRestbp" class="before_slider">
+                                  Resting Blood Pressure (94 - 200 mmHg)</label></td>
+                              <td class="input_slider">
+                                  <form class="slider_input">
+                                      <input type="range" class="hd-slider-width" name="amountRange" min="94" max="200" step="all"
+                                             value="94" id="nRestbp1" oninput="this.form.amountInput.value=this.value" />
+                                      <input type="number" class="hd-number-width" name="amountInput" min="94" max="200" step="all"
+                                             value="94" id="nRestbp2" oninput="this.form.amountRange.value=this.value" />
+                                  </form></td>
+                          </tr>
+
+                          <tr>
+                              <td><label for="nThalach" class="before_slider">
+                                  Thalium Stress Test Maximum Heart Rate (71 - 202)</label></td>
+                              <td class="input_slider">
+                                  <form class="slider_input">
+                                      <input type="range" class="hd-slider-width" name="amountRange" min="71" max="202" step="all"
+                                             value="71" id="nThalach1" oninput="this.form.amountInput.value=this.value" />
+                                      <input type="number" class="hd-number-width" name="amountInput" min="71" max="202" step="all"
+                                             value="71" id="nThalach2" oninput="this.form.amountRange.value=this.value" />
+                                  </form></td>
+                          </tr>
+
+                          <tr>
+                              <td><label for="nCa" class="before_slider">
+                                  Number of Major Vessels Colored by Fluoroscopy (0 - 3)</label></td>
+                              <td class="input_slider">
+                                  <form class="slider_input">
+                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="3" step="all"
+                                             value="0" id="nCa1" oninput="this.form.amountInput.value=this.value" />
+                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="3" step="all"
+                                             value="0" id="nCa2" oninput="this.form.amountRange.value=this.value" />
+                                  </form></td>
+                          </tr>
+
+                          <tr>
+                              <td><label for="nCp" class="before_slider">
+                                  Chest Pain Type (1=typical angina, 2=atypical angina, 3=non-angina, 4=asymptomatic angina)</label></td>
+                              <td class="input_slider">
+                                  <form class="slider_input">
+                                      <input type="range" class="hd-slider-width" name="amountRange" min="1" max="4" step="1"
+                                             value="1" id="nCp1" oninput="this.form.amountInput.value=this.value" />
+                                      <input type="number" class="hd-number-width" name="amountInput" min="1" max="4" step="1"
+                                             value="1" id="nCp2" oninput="this.form.amountRange.value=this.value" />
+                                  </form></td>
+                          </tr>
+
+                          <tr>
+                              <td><label for="nSlope" class="before_slider">
+                                  Peak Exercise ST Segment (0=flat or downsloping, 1=upsloping)</label></td>
+                              <td class="input_slider">
+                                  <form class="slider_input">
+                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="1" step="1"
+                                             value="0" id="nSlope1" oninput="this.form.amountInput.value=this.value" />
+                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="1" step="1"
+                                             value="0" id="nSlope2" oninput="this.form.amountRange.value=this.value" />
+                                  </form></td>
+                          </tr>
+
+                          <tr>
+                              <td><label for="nThal" class="before_slider">
+                                  Thalium Test: (0=normal or fixed defect, 1=reversible defect)</label></td>
+                              <td class="input_slider">
+                                  <form class="slider_input">
+                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="1" step="1"
+                                             value="0" id="nThal1" oninput="this.form.amountInput.value=this.value" />
+                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="1" step="1"
+                                             value="0" id="nThal2" oninput="this.form.amountRange.value=this.value" />
+                                  </form></td>
+                          </tr>
+
+                          <tr>
+                              <td></td>
+                              <td class="input_slider">
+                                  <input type="button" style="color: #0900C4" value="Reset All Sliders" onclick="updateOne(val01,-1)"/>
+                              </td>
+                          </tr>
+
+                      </table>
+
+                  </div>
+
+                  <div class="child2">
+
+                      <script>
+
+                          var width  = 100;
+                          var height = 400;
+
+                          var holder = d3.select(".child2")
+                              .append("svg")
+                              .attr("width", width)
+                              .attr("height", height);
+
+                          // draw a rectangle
+                          var y0 = 20;
+                          var height0 = 380;
+                          holder.append("rect")
+                              .attr("x", 5)
+                              .attr("y", y0+height0)
+                              .style("fill", "rgb(0,255,0)")
+                              .attr("height", 0)
+                              .attr("width", 90);
+
+                          // draw a container rectangle
+                          holder.append("rect")
+                              .attr("x", 5)
+                              .attr("y", y0)
+                              .style("fill", "none")
+                              .style("stroke", "lightblue")
+                              .style("stroke-width",4)
+                              .attr("height",height0)
+                              .attr("width",90);
+
+                          // add text inside rectangle
+                          holder.append("text")
+                              .text("0.00%")
+                              .attr("x",12)
+                              .attr("y",y0+height0-10)
+                              .attr("fill","black")
+                              .attr("font-family","Verdana")
+                              .attr("font-size","20");
+
+                          // initialize
+                          var val01 = document.getElementById("nSex1").value;
+                          var val02 = document.getElementById("nRestbp1").value;
+                          var val03 = document.getElementById("nThalach1").value;
+                          var val04 = document.getElementById("nCa1").value;
+                          var val05 = document.getElementById("nCp1").value;
+                          var val06 = document.getElementById("nSlope1").value;
+                          var val07 = document.getElementById("nThal1").value;
+                          updateOne(val01,0);
+
+                          // Check for changes in the inputs and update output bar
+                          d3.select("#nSex1").on("input", function() {updateOne(+this.value,1);});
+                          d3.select("#nSex2").on("input", function() {updateOne(+this.value,1);});
+                          d3.select("#nRestbp1").on("input", function() {updateOne(+this.value,2);});
+                          d3.select("#nRestbp2").on("input", function() {updateOne(+this.value,2);});
+                          d3.select("#nThalach1").on("input", function() {updateOne(+this.value,3);});
+                          d3.select("#nThalach2").on("input", function() {updateOne(+this.value,3);});
+                          d3.select("#nCa1").on("input", function() {updateOne(+this.value,4);});
+                          d3.select("#nCa2").on("input", function() {updateOne(+this.value,4);});
+                          d3.select("#nCp1").on("input", function() {updateOne(+this.value,5);});
+                          d3.select("#nCp2").on("input", function() {updateOne(+this.value,5);});
+                          d3.select("#nSlope1").on("input", function() {updateOne(+this.value,6);});
+                          d3.select("#nSlope2").on("input", function() {updateOne(+this.value,6);});
+                          d3.select("#nThal1").on("input", function() {updateOne(+this.value,7);});
+                          d3.select("#nThal2").on("input", function() {updateOne(+this.value,7);});
+
+                          // Update the heart disease probability
+                          function updateOne(value,index) {
+
+                              if (index == 1) {
+                                  val01 = value;
+                              } else if (index == 2) {
+                                  val02 = value;
+                              } else if (index == 3) {
+                                  val03 = value;
+                              } else if (index == 4) {
+                                  val04 = value;
+                              } else if (index == 5) {
+                                  val05 = value;
+                              } else if (index == 6) {
+                                  val06 = value;
+                              } else if (index == 7) {
+                                  val07 = value;
+                              } else if (index == -1) {
+                                  // Set everything back to default state:
+                                  val01 = document.getElementById("nSex1").defaultValue;
+                                  document.getElementById("nSex1").value = val01;
+                                  document.getElementById("nSex2").value = val01;
+                                  val02 = document.getElementById("nRestbp1").defaultValue;
+                                  document.getElementById("nRestbp1").value = val02;
+                                  document.getElementById("nRestbp2").value = val02;
+                                  val03 = document.getElementById("nThalach1").defaultValue;
+                                  document.getElementById("nThalach1").value = val03;
+                                  document.getElementById("nThalach2").value = val03;
+                                  val04 = document.getElementById("nCa1").defaultValue;
+                                  document.getElementById("nCa1").value = val04;
+                                  document.getElementById("nCa2").value = val04;
+                                  val05 = document.getElementById("nCp1").defaultValue;
+                                  document.getElementById("nCp1").value = val05;
+                                  document.getElementById("nCp2").value = val05;
+                                  val06 = document.getElementById("nSlope1").defaultValue;
+                                  document.getElementById("nSlope1").value = val06;
+                                  document.getElementById("nSlope2").value = val06;
+                                  val07 = document.getElementById("nThal1").defaultValue;
+                                  document.getElementById("nThal1").value = val07;
+                                  document.getElementById("nThal2").value = val07;
+                              }
+
+                              // Standardize the continuous features:
+                              var srbp_val     = (val02-131.7157)/17.7478;
+                              var sthalach_val = (val03-149.3278)/23.1211;
+                              var sca_val      = (val04-0.6722)/3.0;
+
+                              // Disentangle the categorical features:
+                              var cp_contr = 0.0;
+                              if (val05 == 1) {
+                                  cp_contr = -2.2318;
+                              } else if (val05 == 2) {
+                                  cp_contr = -1.2681;
+                              } else if (val05 == 3) {
+                                  cp_contr = -2.1124;
+                              }
+                              var slope_contr = 0.0;
+                              if (val06 == 1) {slope_contr = -1.4726;}
+                              var thal_contr = 0.0;
+                              if(val07 == 1) {thal_contr = 1.5009;}
+
+                              // Compute log-odds, then probability:
+                              var scprod = 1.4361*val01 + 0.4415*srbp_val - 0.4431*sthalach_val + 3.7984*sca_val + cp_contr + slope_contr + thal_contr;
+                              var drec   = 1.0/(1.0+Math.exp(-scprod));
+                              var drecs  = height0*drec;
+                              drec       *= 100;
+
+                              // Update plot:
+                              rcolor     = percentToRGB(drec);
+                              holder.select("rect")
+                                  .attr("y",y0+height0-drecs)
+                                  .attr("height",drecs)
+                                  .style("fill", rcolor);
+
+                              holder.select("text")
+                                  .text(function(){return parseFloat(Math.round(drec * 100) / 100).toFixed(2)+"%";});
+
+                          }
+
+                          function percentToRGB(percent) {
+                              if (percent === 100) {
+                                  percent = 99
+                              }
+                              var r, g, b;
+
+                              if (percent < 50) {
+                                  // green to yellow
+                                  r = Math.floor(255 * (percent / 50));
+                                  g = 255;
+
+                              } else {
+                                  // yellow to red
+                                  r = 255;
+                                  g = Math.floor(255 * ((50 - percent % 50) / 50));
+                              }
+                              b = 0;
+
+                              return "rgb(" + r + "," + g + "," + b + ")";
+                          }
+
+                      </script>
+
+                  </div>
+
+              </div>
+
+              <div class="clear"></div>
+
           </div>
-          <div class="col-md-4">
-            <div class="probootstrap-pricing probootstrap-popular probootstrap-shadow">
-              <h2>Business</h2>
-              <p class="probootstrap-price"><strong>$69.99</strong></p>
-              <p class="probootstrap-note">This is a monthly recurring payment.</p>
-              <ul class="probootstrap-list text-left mb50">
-                <li class="probootstrap-check">Pointing has no control</li>
-                <li class="probootstrap-check">A small river named Duden flows</li>
-                <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-              </ul>
-              <p><a href="#" class="btn btn-primary">Get Started</a></p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="probootstrap-pricing">
-              <h2>Premium</h2>
-              <p class="probootstrap-price"><strong>$224.99</strong></p>
-              <p class="probootstrap-note">This is a monthly recurring payment.</p>
-              <ul class="probootstrap-list text-left mb50">
-                <li class="probootstrap-check">Pointing has no control</li>
-                <li class="probootstrap-check">A small river named Duden flows</li>
-                <li class="probootstrap-check">Roasted parts of sentences fly into your mouth</li>
-              </ul>
-              <p><a href="#" class="btn btn-black">Get Started</a></p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     <!-- END section -->
@@ -373,9 +618,6 @@ this date.</p></p>
     <script src="js/scripts.min.js"></script>
     <script src="js/custom.js"></script>
 
-    <!-- Google Map -->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="js/google-map.js"></script> -->
 
   </body>
 </html>
