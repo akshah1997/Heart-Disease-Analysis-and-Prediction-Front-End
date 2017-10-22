@@ -1,0 +1,64 @@
+#parent {
+    border: 1px solid #000;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: #0900C4;
+    background-color: rgba(248, 228, 104, 0.71);
+    font-size: 12pt;
+    -webkit-border-bottom-left-radius: 15px;
+    -webkit-border-bottom-right-radius: 15px;
+    -webkit-border-top-left-radius: 15px;
+    -webkit-border-top-right-radius: 15px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
+    -moz-border-radius-topleft: 15px;
+    -moz-border-radius-topright: 15pxs;
+
+}
+
+#wrapper .child1 {
+    float: left;
+    width: 85%;
+}
+
+#wrapper .child2 {
+    margin-left: 88%;
+    margin-top: 5%;
+}
+
+div.clear {
+    clear: both;
+}
+
+table.naked_table {
+    width: 100%;
+    margin-left: -20px;
+    border: none;
+    border-collapse: separate;
+    border-spacing: 30px 20px;
+}
+
+table.naked_table td.input_slider {
+    text-align: left;
+}
+
+.hd-slider-width {
+    width: 70%;
+}
+
+.hd-number-width {
+    width: 20%;
+}
+
+form.slider_input {
+    width: 130%;
+}
+
+label.before_slider {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    text-align: right;
+}
