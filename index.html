@@ -1,597 +1,708 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Heart Disease Analysis &amp; Prediction</title>
 
-    <link rel="stylesheet" href="css/styles-merged.css">
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-    <link rel="stylesheet" href="css/predictor.css">
+    <link href="css/styles-merged.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="fonts/icomoon/style.css" rel="stylesheet">
+    <link href="css/predictor.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.min.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
+    <script src="js/vendor/html5shiv.min.js"></script>
+    <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <script src="//d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
 
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-default probootstrap-navbar">
-      <div class="container">
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default probootstrap-navbar">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">Heart Disease Analysis &amp; Prediction</a>
+            <button aria-controls="navbar" aria-expanded="false" class="navbar-toggle collapsed"
+                    data-target="#navbar-collapse"
+                    data-toggle="collapse" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Heart Disease Analysis &amp; Prediction</a>
         </div>
 
-        <div id="navbar-collapse" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="#" data-nav-section="home">Home</a></li>
-            <li><a href="#" data-nav-section="features">Features</a></li>
-            <li><a href="#" data-nav-section="predict">Predict</a></li>
-            <li><a href="#" data-nav-section="analysis">Analysis</a></li>
-            <li><a href="#" data-nav-section="contact">Contact</a></li>
-          </ul>
+        <div class="navbar-collapse collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a data-nav-section="home" href="#">Home</a></li>
+                <li><a data-nav-section="features" href="#">Features</a></li>
+                <li><a data-nav-section="predict" href="#">Predict</a></li>
+                <li><a data-nav-section="analysis" href="#">Analysis</a></li>
+                <li><a data-nav-section="contact" href="#">Contact</a></li>
+            </ul>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
-    <section class="probootstrap-hero prohttp://localhost/probootstrap/frame/#featuresbootstrap-slant" style="background-image: url(img/main_back.jpg);" data-section="home" data-stellar-background-ratio="0.5"  id="home">
-      <div class="container">
+<section class="probootstrap-hero prohttp://localhost/probootstrap/frame/#featuresbootstrap-slant"
+         data-section="home" data-stellar-background-ratio="0.5" id="home"
+         style="background-image: url(img/main_back.jpg);">
+    <div class="container">
         <div class="row intro-text">
-          <div class="col-md-8 col-md-offset-2 text-center">
-            <h1 class="probootstrap-heading probootstrap-animate" style="color:#E0F7FA">Predict your chance of having a heart disease because prevention is better than cure!</h1>
-            <div class="probootstrap-subheading center">
-              <p class="probootstrap-animate"><a href="#predict" role="button" class="btn btn-primary">Check Now</a><a href="#analysis" class="btn btn-default smoothscroll" role="button">See Analysis</a></p>
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h1 class="probootstrap-heading probootstrap-animate" style="color:#E0F7FA">Predict your chance of
+                    having a heart disease because prevention is better than cure!</h1>
+                <div class="probootstrap-subheading center">
+                    <p class="probootstrap-animate"><a class="btn btn-primary" href="#predict" role="button">Check
+                        Now</a><a class="btn btn-default smoothscroll" href="#analysis" role="button">See Analysis</a>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section class="probootstrap-section">
-      <div class="container">
+<section class="probootstrap-section">
+    <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-              <span class="icon icon-phone3"></span>
-              <h2>Mobile Optimize</h2>
-              <p>Optimized for viewing on different platforms and devices. Looks the same on every mobile, laptops, PCs and tablets. A smooth, continous flow.</p>
-              <p><a href="#features" class="probootstrap-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            <div class="col-md-4">
+                <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
+                    <span class="icon icon-phone3"></span>
+                    <h2>Mobile Optimize</h2>
+                    <p>Optimized for viewing on different platforms and devices. Looks the same on every mobile,
+                        laptops, PCs and tablets. A smooth, continous flow.</p>
+                    <p><a class="probootstrap-link" href="#features">Learn More <i class="icon-chevron-right"></i></a>
+                    </p>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-              <span class="icon icon-wallet2"></span>
-              <h2>Decrease Costs</h2>
-              <p>Examine your heart related reports by yourself. Predict the chance of having a heart disease free of cost.</p>
-              <p><a href="#predict" class="probootstrap-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            <div class="col-md-4">
+                <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
+                    <span class="icon icon-wallet2"></span>
+                    <h2>Decrease Costs</h2>
+                    <p>Examine your heart related reports by yourself. Predict the chance of having a heart disease free
+                        of cost.</p>
+                    <p><a class="probootstrap-link" href="#predict">Learn More <i class="icon-chevron-right"></i></a>
+                    </p>
+                </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
-              <span class="icon icon-lightbulb"></span>
-              <h2>Smart Idea</h2>
-              <p>Great accuracy. Accurate prediction rates. Analysis and prediction based on large samples of data.</p>
-              <p><a href="#analysis" class="probootstrap-link">Learn More <i class="icon-chevron-right"></i></a></p>
+            <div class="col-md-4">
+                <div class="probootstrap-service-item probootstrap-animate" data-animate-effect="fadeIn">
+                    <span class="icon icon-lightbulb"></span>
+                    <h2>Smart Idea</h2>
+                    <p>Great accuracy. Accurate prediction rates. Analysis and prediction based on large samples of
+                        data.</p>
+                    <p><a class="probootstrap-link" href="#analysis">Learn More <i class="icon-chevron-right"></i></a>
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section class="probootstrap-section probootstrap-bg-light" id="features" data-section="features">
-      <div class="container">
+<section class="probootstrap-section probootstrap-bg-light" data-section="features" id="features">
+    <div class="container">
         <div class="row text-center mb100">
-          <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-            <h2 class="mb30 text-black probootstrap-heading">Features</h2>
-            <p>Loads of features. Making it easier for anyone to predict the chance of getting heart disease. Shows analysis done on large data sets.</p>
-          </div>
+            <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
+                <h2 class="mb30 text-black probootstrap-heading">Features</h2>
+                <p>Loads of features. Making it easier for anyone to predict the chance of getting heart disease. Shows
+                    analysis done on large data sets.</p>
+            </div>
         </div>
         <!-- END row -->
         <div class="row mb100">
-          <div class="col-md-8 probootstrap-animate">
-            <img src="img/githubpage.jpg" alt="GitHub Page" class="img-responsive probootstrap-shadow">
-          </div>
-          <div class="col-md-4 probootstrap-section-heading">
-            <h3 class="text-primary probootstrap-heading-2">Available on GitHub<span class="icon icon-github2"></span></h3>
-            <p><p>The web page's source code is freely available on GitHub. See the code, modify and use freely under GNU GPL-3.0 licence. Just notify the changes made to author.</p></p>
-            <ul class="probootstrap-list">
-              <li class="probootstrap-check">Clone at <a href="https://github.com/akshah1997/Heart-Disease-Analysis-and-Prediction-Front-End.git" class="probootstrap-link" target="_blank">GitHub <span class="icon icon-github"></span></a></li>
-              <li class="probootstrap-check">Open Source</li>
-              <li class="probootstrap-check">View, modify and use freely under GNU GPL-3.0 license</li>
-            </ul>
-          </div>
+            <div class="col-md-8 probootstrap-animate">
+                <img alt="GitHub Page" class="img-responsive probootstrap-shadow" src="img/githubpage.jpg">
+            </div>
+            <div class="col-md-4 probootstrap-section-heading">
+                <h3 class="text-primary probootstrap-heading-2">Available on GitHub<span
+                        class="icon icon-github2"></span></h3>
+                <p>The web page's source code is freely available on GitHub. See the code, modify and use freely under
+                    GNU GPL-3.0 licence. Just notify the changes made to author.</p>
+                <ul class="probootstrap-list">
+                    <li class="probootstrap-check">Clone at <a
+                            class="probootstrap-link"
+                            href="https://github.com/akshah1997/Heart-Disease-Analysis-and-Prediction-Front-End.git"
+                            target="_blank">GitHub <span class="icon icon-github"></span></a>
+                    </li>
+                    <li class="probootstrap-check">Open Source</li>
+                    <li class="probootstrap-check">View, modify and use freely under GNU GPL-3.0 license</li>
+                </ul>
+            </div>
         </div>
         <!-- END row -->
         <div class="row mb100">
-          <div class="col-md-4 probootstrap-section-heading">
-            <h3 class="text-primary probootstrap-heading-2">Analysis Data Set and Code Available <span class="icon icon-database2"></span></h3>
-            <p><p>Data set on which the analysis is done is available. Also, the code used for analysing the data and get prediction rates is made available.</p></p>
-            <ul class="probootstrap-list">
-              <li class="probootstrap-check">Clone at <a href="https://github.com/Byte7/Heart-Disease-Analysis-and-Prediction.git" class="probootstrap-link" target="_blank">GitHub <span class="icon icon-github"></a></li>
-              <li class="probootstrap-check">Open Source</li>
-              <li class="probootstrap-check">View, modify and use freely under GNU GPL-3.0 license</li>
-            </ul>
-          </div>
-          <div class="col-md-8 probootstrap-animate">
-            <p><img src="img/analysis_githubpage.jpg" alt="Analysis GitHub Page" class="img-responsive probootstrap-shadow"></p>
-          </div>
+            <div class="col-md-4 probootstrap-section-heading">
+                <h3 class="text-primary probootstrap-heading-2">Analysis Data Set and Code Available <span
+                        class="icon icon-database2"></span></h3>
+                <p>Data set on which the analysis is done is available. Also, the code used for analysing the data and
+                    get prediction rates is made available.</p>
+                <ul class="probootstrap-list">
+                    <li class="probootstrap-check">Clone at <a
+                            class="probootstrap-link"
+                            href="https://github.com/Byte7/Heart-Disease-Analysis-and-Prediction.git" target="_blank">GitHub
+                        <span class="icon icon-github"></span></a></li>
+                    <li class="probootstrap-check">Open Source</li>
+                    <li class="probootstrap-check">View, modify and use freely under GNU GPL-3.0 license</li>
+                </ul>
+            </div>
+            <div class="col-md-8 probootstrap-animate">
+                <p><img alt="Analysis GitHub Page" class="img-responsive probootstrap-shadow"
+                        src="img/analysis_githubpage.jpg"></p>
+            </div>
         </div>
         <!-- END row -->
         <div class="row mb100">
-          <div class="col-md-8 probootstrap-animate">
-            <p><img src="img/dataset.jpg" alt="Dataset" class="img-responsive probootstrap-shadow"></p>
-          </div>
-          <div class="col-md-4 probootstrap-section-heading">
-            <h3 class="text-primary probootstrap-heading-2">Vast and Reliable Dataset <span class="icon icon-database2"></span></h3>
-            <p><p>This database contains 76 attributes, but all published experiments refer to using a subset of 14 of them. In particular, the Cleveland database is the only one that has been used by ML researchers to
-this date.</p></p>
-            <ul class="probootstrap-list">
-              <li class="probootstrap-check">Dataset available at <a href="http://archive.ics.uci.edu/ml/datasets/Heart+Disease" class="probootstrap-link" target="_blank">UCI <span class="icon icon-database"></span></a></li>
-              <li class="probootstrap-check">Contains 76 attributes</li>
-              <li class="probootstrap-check">Report on subset of 14 such attributes</li>
-            </ul>
-          </div>
+            <div class="col-md-8 probootstrap-animate">
+                <p><img alt="Dataset" class="img-responsive probootstrap-shadow" src="img/dataset.jpg"></p>
+            </div>
+            <div class="col-md-4 probootstrap-section-heading">
+                <h3 class="text-primary probootstrap-heading-2">Vast and Reliable Dataset <span
+                        class="icon icon-database2"></span></h3>
+                <p>This database contains 76 attributes, but all published experiments refer to using a subset of 14 of
+                    them. In particular, the Cleveland database is the only one that has been used by ML researchers to
+                    this date.</p>
+                <ul class="probootstrap-list">
+                    <li class="probootstrap-check">Dataset available at <a
+                            class="probootstrap-link" href="http://archive.ics.uci.edu/ml/datasets/Heart+Disease"
+                            target="_blank">UCI <span class="icon icon-database"></span></a></li>
+                    <li class="probootstrap-check">Contains 76 attributes</li>
+                    <li class="probootstrap-check">Report on subset of 14 such attributes</li>
+                </ul>
+            </div>
         </div>
         <!-- END row -->
         <div class="row mb100">
-          <div class="col-md-4 probootstrap-section-heading">
-            <h3 class="text-primary probootstrap-heading-2">Analysis Using Python and Jupyter Notebook</h3>
-            <p><p>The code used for analysis of data and getting prediction rates is pretty simple. The code is written in Python and Jupyter Notebook.</p></p>
-            <ul class="probootstrap-list">
-              <li class="probootstrap-check">Clone at <a href="https://github.com/Byte7/Heart-Disease-Analysis-and-Prediction.git" class="probootstrap-link" target="_blank">GitHub <span class="icon icon-github"></a></li>
-              <li class="probootstrap-check">Easy to understand</li>
-              <li class="probootstrap-check">Easy to modify</li>
-              <li class="probootstrap-check">Written in Python and Jupyter Notebook</li>
-            </ul>
-          </div>
-          <div class="col-md-8 probootstrap-animate">
-            <p><img src="img/analysis_language.jpg" alt="Analysis Language" class="img-responsive probootstrap-shadow"></p>
-          </div>
+            <div class="col-md-4 probootstrap-section-heading">
+                <h3 class="text-primary probootstrap-heading-2">Analysis Using Python and Jupyter Notebook</h3>
+                <p>The code used for analysis of data and getting prediction rates is pretty simple. The code is written
+                    in Python and Jupyter Notebook.</p>
+                <ul class="probootstrap-list">
+                    <li class="probootstrap-check">Clone at <a
+                            class="probootstrap-link"
+                            href="https://github.com/Byte7/Heart-Disease-Analysis-and-Prediction.git" target="_blank">GitHub
+                        <span class="icon icon-github"></span></a></li>
+                    <li class="probootstrap-check">Easy to understand</li>
+                    <li class="probootstrap-check">Easy to modify</li>
+                    <li class="probootstrap-check">Written in Python and Jupyter Notebook</li>
+                </ul>
+            </div>
+            <div class="col-md-8 probootstrap-animate">
+                <p><img alt="Analysis Language" class="img-responsive probootstrap-shadow"
+                        src="img/analysis_language.jpg"></p>
+            </div>
         </div>
         <!-- END row -->
-      </div>
-    </section>
-    <!-- END section -->
+    </div>
+</section>
+<!-- END section -->
 
-    <section class="probootstrap-section" data-section="predict" id="predict">
-      <div class="container">
+<section class="probootstrap-section" data-section="predict" id="predict">
+    <div class="container">
         <div class="row text-center mb100">
-          <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-            <h2 class="mb30 text-black probootstrap-heading">Predict your Chance of Having a Heart Disease</h2>
-            <p>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart disease based on those values.</p>
-          </div>
+            <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
+                <h2 class="mb30 text-black probootstrap-heading">Predict your Chance of Having a Heart Disease</h2>
+                <p>Enter the appropriate values of symptoms you face. Get the chances of you contracting heart disease
+                    based on those values.</p>
+            </div>
         </div>
         <!-- END row -->
         <!-- Main Div -->
         <div id="parent">
-              <div id="wrapper">
-                  <center>
-                      <h1 class="text-black probootstrap-heading">Heart Disease Predictor</h1>
-                  </center>
-                  <div class="child1">
-                      <table class="naked_table">
-                          <tr>
-                              <td>
-                                  <label class="before_slider">
-                                      Sex (0=female,1=male)</label></td>
-                              <td class="input_slider">
-                                  <form class="slider_input">
-                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="1" step="1"
-                                             value="0" id="nSex1" oninput="this.form.amountInput.value=this.value" />
-                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="1" step="1"
-                                             value="0" id="nSex2" oninput="this.form.amountRange.value=this.value" />
-                                  </form></td>
-                          </tr>
-                          <tr>
-                              <td><label for="nRestbp" class="before_slider">
-                                  Resting Blood Pressure (94 - 200 mmHg)</label></td>
-                              <td class="input_slider">
-                                  <form class="slider_input">
-                                      <input type="range" class="hd-slider-width" name="amountRange" min="94" max="200" step="all"
-                                             value="94" id="nRestbp1" oninput="this.form.amountInput.value=this.value" />
-                                      <input type="number" class="hd-number-width" name="amountInput" min="94" max="200" step="all"
-                                             value="94" id="nRestbp2" oninput="this.form.amountRange.value=this.value" />
-                                  </form></td>
-                          </tr>
-                          <tr>
-                              <td><label for="nThalach" class="before_slider">
-                                  Thalium Stress Test Maximum Heart Rate (71 - 202)</label></td>
-                              <td class="input_slider">
-                                  <form class="slider_input">
-                                      <input type="range" class="hd-slider-width" name="amountRange" min="71" max="202" step="all"
-                                             value="71" id="nThalach1" oninput="this.form.amountInput.value=this.value" />
-                                      <input type="number" class="hd-number-width" name="amountInput" min="71" max="202" step="all"
-                                             value="71" id="nThalach2" oninput="this.form.amountRange.value=this.value" />
-                                  </form></td>
-                          </tr>
-                          <tr>
-                              <td><label for="nCa" class="before_slider">
-                                  Number of Major Vessels Colored by Fluoroscopy (0 - 3)</label></td>
-                              <td class="input_slider">
-                                  <form class="slider_input">
-                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="3" step="all"
-                                             value="0" id="nCa1" oninput="this.form.amountInput.value=this.value" />
-                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="3" step="all"
-                                             value="0" id="nCa2" oninput="this.form.amountRange.value=this.value" />
-                                  </form></td>
-                          </tr>
-                          <tr>
-                              <td><label for="nCp" class="before_slider">
-                                  Chest Pain Type (1=typical angina, 2=atypical angina, 3=non-angina, 4=asymptomatic angina)</label></td>
-                              <td class="input_slider">
-                                  <form class="slider_input">
-                                      <input type="range" class="hd-slider-width" name="amountRange" min="1" max="4" step="1"
-                                             value="1" id="nCp1" oninput="this.form.amountInput.value=this.value" />
-                                      <input type="number" class="hd-number-width" name="amountInput" min="1" max="4" step="1"
-                                             value="1" id="nCp2" oninput="this.form.amountRange.value=this.value" />
-                                  </form></td>
-                          </tr>
-                          <tr>
-                              <td><label for="nSlope" class="before_slider">
-                                  Peak Exercise ST Segment (0=flat or downsloping, 1=upsloping)</label></td>
-                              <td class="input_slider">
-                                  <form class="slider_input">
-                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="1" step="1"
-                                             value="0" id="nSlope1" oninput="this.form.amountInput.value=this.value" />
-                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="1" step="1"
-                                             value="0" id="nSlope2" oninput="this.form.amountRange.value=this.value" />
-                                  </form></td>
-                          </tr>
-                          <tr>
-                              <td><label for="nThal" class="before_slider">
-                                  Thalium Test: (0=normal or fixed defect, 1=reversible defect)</label></td>
-                              <td class="input_slider">
-                                  <form class="slider_input">
-                                      <input type="range" class="hd-slider-width" name="amountRange" min="0" max="1" step="1"
-                                             value="0" id="nThal1" oninput="this.form.amountInput.value=this.value" />
-                                      <input type="number" class="hd-number-width" name="amountInput" min="0" max="1" step="1"
-                                             value="0" id="nThal2" oninput="this.form.amountRange.value=this.value" />
-                                  </form></td>
-                          </tr>
-                          <tr>
-                              <td></td>
-                              <td class="input_slider">
-                                  <input type="button" class="btn btn-primary" value="Reset All Sliders" onclick="updateOne(val01,-1)"/>
-                              </td>
-                          </tr>
-                      </table>
-                  </div>
-                  <div class="child2">
-                      <script>
-                          var width  = 100;
-                          var height = 400;
+            <div id="wrapper">
+                <div style="text-align: center;">
+                    <h1 class="text-black probootstrap-heading">Heart Disease Predictor</h1>
+                </div>
+                <div class="child1">
+                    <table class="naked_table">
+                        <tr>
+                            <td>
+                                <label class="before_slider" for="nSex1">
+                                    Sex (0=female,1=male)</label></td>
+                            <td class="input_slider">
+                                <form class="slider_input">
+                                    <input class="hd-slider-width" id="nSex1" max="1" min="0" name="amountRange"
+                                           oninput="this.form.amountInput.value=this.value"
+                                           step="1" type="range" value="0"/>
+                                    <input class="hd-number-width" id="nSex2" max="1" min="0" name="amountInput"
+                                           oninput="this.form.amountRange.value=this.value"
+                                           step="1" type="number" value="0"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="before_slider" for="nRestbp1">
+                                Resting Blood Pressure (94 - 200 mmHg)</label></td>
+                            <td class="input_slider">
+                                <form class="slider_input">
+                                    <input class="hd-slider-width" id="nRestbp1" max="200" min="94" name="amountRange"
+                                           oninput="this.form.amountInput.value=this.value"
+                                           step="all" type="range" value="94"/>
+                                    <input class="hd-number-width" id="nRestbp2" max="200" min="94" name="amountInput"
+                                           oninput="this.form.amountRange.value=this.value"
+                                           step="all" type="number" value="94"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="before_slider" for="nThalach1">
+                                Thalium Stress Test Maximum Heart Rate (71 - 202)</label></td>
+                            <td class="input_slider">
+                                <form class="slider_input">
+                                    <input class="hd-slider-width" id="nThalach1" max="202" min="71" name="amountRange"
+                                           oninput="this.form.amountInput.value=this.value"
+                                           step="all" type="range" value="71"/>
+                                    <input class="hd-number-width" id="nThalach2" max="202" min="71" name="amountInput"
+                                           oninput="this.form.amountRange.value=this.value"
+                                           step="all" type="number" value="71"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="before_slider" for="nCa1">
+                                Number of Major Vessels Colored by Fluoroscopy (0 - 3)</label></td>
+                            <td class="input_slider">
+                                <form class="slider_input">
+                                    <input class="hd-slider-width" id="nCa1" max="3" min="0" name="amountRange"
+                                           oninput="this.form.amountInput.value=this.value"
+                                           step="all" type="range" value="0"/>
+                                    <input class="hd-number-width" id="nCa2" max="3" min="0" name="amountInput"
+                                           oninput="this.form.amountRange.value=this.value"
+                                           step="all" type="number" value="0"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="before_slider" for="nCp1">
+                                Chest Pain Type (1=typical angina, 2=atypical angina, 3=non-angina, 4=asymptomatic
+                                angina)</label></td>
+                            <td class="input_slider">
+                                <form class="slider_input">
+                                    <input class="hd-slider-width" id="nCp1" max="4" min="1" name="amountRange"
+                                           oninput="this.form.amountInput.value=this.value"
+                                           step="1" type="range" value="1"/>
+                                    <input class="hd-number-width" id="nCp2" max="4" min="1" name="amountInput"
+                                           oninput="this.form.amountRange.value=this.value"
+                                           step="1" type="number" value="1"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="before_slider" for="nSlope1">
+                                Peak Exercise ST Segment (0=flat or downsloping, 1=upsloping)</label></td>
+                            <td class="input_slider">
+                                <form class="slider_input">
+                                    <input class="hd-slider-width" id="nSlope1" max="1" min="0" name="amountRange"
+                                           oninput="this.form.amountInput.value=this.value"
+                                           step="1" type="range" value="0"/>
+                                    <input class="hd-number-width" id="nSlope2" max="1" min="0" name="amountInput"
+                                           oninput="this.form.amountRange.value=this.value"
+                                           step="1" type="number" value="0"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label class="before_slider" for="nThal1">
+                                Thalium Test: (0=normal or fixed defect, 1=reversible defect)</label></td>
+                            <td class="input_slider">
+                                <form class="slider_input">
+                                    <input class="hd-slider-width" id="nThal1" max="1" min="0" name="amountRange"
+                                           oninput="this.form.amountInput.value=this.value"
+                                           step="1" type="range" value="0"/>
+                                    <input class="hd-number-width" id="nThal2" max="1" min="0" name="amountInput"
+                                           oninput="this.form.amountRange.value=this.value"
+                                           step="1" type="number" value="0"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="input_slider">
+                                <input class="btn btn-primary" onclick="updateOne(val01,-1)" type="button"
+                                       value="Reset All Sliders"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="child2">
+                    <script>
+                        const width = 100;
+                        const height = 400;
 
-                          var holder = d3.select(".child2")
-                              .append("svg")
-                              .attr("width", width)
-                              .attr("height", height);
+                        const holder = d3.select(".child2")
+                            .append("svg")
+                            .attr("width", width)
+                            .attr("height", height);
 
-                          // draw a rectangle
-                          var y0 = 20;
-                          var height0 = 380;
-                          holder.append("rect")
-                              .attr("x", 5)
-                              .attr("y", y0+height0)
-                              .style("fill", "rgb(0,255,0)")
-                              .attr("height", 0)
-                              .attr("width", 90);
+                        // draw a rectangle
+                        const y0 = 20;
+                        const height0 = 380;
+                        holder.append("rect")
+                            .attr("x", 5)
+                            .attr("y", y0 + height0)
+                            .style("fill", "rgb(0,255,0)")
+                            .attr("height", 0)
+                            .attr("width", 90);
 
-                          // draw a container rectangle
-                          holder.append("rect")
-                              .attr("x", 5)
-                              .attr("y", y0)
-                              .style("fill", "none")
-                              .style("stroke", "lightblue")
-                              .style("stroke-width",4)
-                              .attr("height",height0)
-                              .attr("width",90);
+                        // draw a container rectangle
+                        holder.append("rect")
+                            .attr("x", 5)
+                            .attr("y", y0)
+                            .style("fill", "none")
+                            .style("stroke", "lightblue")
+                            .style("stroke-width", 4)
+                            .attr("height", height0)
+                            .attr("width", 90);
 
-                          // add text inside rectangle
-                          holder.append("text")
-                              .text("0.00%")
-                              .attr("x",12)
-                              .attr("y",y0+height0-10)
-                              .attr("fill","black")
-                              .attr("font-family","Verdana")
-                              .attr("font-size","20");
+                        // add text inside rectangle
+                        holder.append("text")
+                            .text("0.00%")
+                            .attr("x", 12)
+                            .attr("y", y0 + height0 - 10)
+                            .attr("fill", "black")
+                            .attr("font-family", "Verdana")
+                            .attr("font-size", "20");
 
-                          // initialize
-                          var val01 = document.getElementById("nSex1").value;
-                          var val02 = document.getElementById("nRestbp1").value;
-                          var val03 = document.getElementById("nThalach1").value;
-                          var val04 = document.getElementById("nCa1").value;
-                          var val05 = document.getElementById("nCp1").value;
-                          var val06 = document.getElementById("nSlope1").value;
-                          var val07 = document.getElementById("nThal1").value;
-                          updateOne(val01,0);
+                        // initialize
+                        let val01 = document.getElementById("nSex1").value;
+                        let val02 = document.getElementById("nRestbp1").value;
+                        let val03 = document.getElementById("nThalach1").value;
+                        let val04 = document.getElementById("nCa1").value;
+                        let val05 = document.getElementById("nCp1").value;
+                        let val06 = document.getElementById("nSlope1").value;
+                        let val07 = document.getElementById("nThal1").value;
+                        updateOne(val01, 0);
 
-                          // Check for changes in the inputs and update output bar
-                          d3.select("#nSex1").on("input", function() {updateOne(+this.value,1);});
-                          d3.select("#nSex2").on("input", function() {updateOne(+this.value,1);});
-                          d3.select("#nRestbp1").on("input", function() {updateOne(+this.value,2);});
-                          d3.select("#nRestbp2").on("input", function() {updateOne(+this.value,2);});
-                          d3.select("#nThalach1").on("input", function() {updateOne(+this.value,3);});
-                          d3.select("#nThalach2").on("input", function() {updateOne(+this.value,3);});
-                          d3.select("#nCa1").on("input", function() {updateOne(+this.value,4);});
-                          d3.select("#nCa2").on("input", function() {updateOne(+this.value,4);});
-                          d3.select("#nCp1").on("input", function() {updateOne(+this.value,5);});
-                          d3.select("#nCp2").on("input", function() {updateOne(+this.value,5);});
-                          d3.select("#nSlope1").on("input", function() {updateOne(+this.value,6);});
-                          d3.select("#nSlope2").on("input", function() {updateOne(+this.value,6);});
-                          d3.select("#nThal1").on("input", function() {updateOne(+this.value,7);});
-                          d3.select("#nThal2").on("input", function() {updateOne(+this.value,7);});
+                        // Check for changes in the inputs and update output bar
+                        d3.select("#nSex1").on("input", function () {
+                            updateOne(+this.value, 1);
+                        });
+                        d3.select("#nSex2").on("input", function () {
+                            updateOne(+this.value, 1);
+                        });
+                        d3.select("#nRestbp1").on("input", function () {
+                            updateOne(+this.value, 2);
+                        });
+                        d3.select("#nRestbp2").on("input", function () {
+                            updateOne(+this.value, 2);
+                        });
+                        d3.select("#nThalach1").on("input", function () {
+                            updateOne(+this.value, 3);
+                        });
+                        d3.select("#nThalach2").on("input", function () {
+                            updateOne(+this.value, 3);
+                        });
+                        d3.select("#nCa1").on("input", function () {
+                            updateOne(+this.value, 4);
+                        });
+                        d3.select("#nCa2").on("input", function () {
+                            updateOne(+this.value, 4);
+                        });
+                        d3.select("#nCp1").on("input", function () {
+                            updateOne(+this.value, 5);
+                        });
+                        d3.select("#nCp2").on("input", function () {
+                            updateOne(+this.value, 5);
+                        });
+                        d3.select("#nSlope1").on("input", function () {
+                            updateOne(+this.value, 6);
+                        });
+                        d3.select("#nSlope2").on("input", function () {
+                            updateOne(+this.value, 6);
+                        });
+                        d3.select("#nThal1").on("input", function () {
+                            updateOne(+this.value, 7);
+                        });
+                        d3.select("#nThal2").on("input", function () {
+                            updateOne(+this.value, 7);
+                        });
 
-                          // Update the heart disease probability
-                          function updateOne(value,index) {
+                        // Update the heart disease probability
+                        function updateOne(value, index) {
 
-                              if (index == 1) {
-                                  val01 = value;
-                              } else if (index == 2) {
-                                  val02 = value;
-                              } else if (index == 3) {
-                                  val03 = value;
-                              } else if (index == 4) {
-                                  val04 = value;
-                              } else if (index == 5) {
-                                  val05 = value;
-                              } else if (index == 6) {
-                                  val06 = value;
-                              } else if (index == 7) {
-                                  val07 = value;
-                              } else if (index == -1) {
-                                  // Set everything back to default state:
-                                  val01 = document.getElementById("nSex1").defaultValue;
-                                  document.getElementById("nSex1").value = val01;
-                                  document.getElementById("nSex2").value = val01;
-                                  val02 = document.getElementById("nRestbp1").defaultValue;
-                                  document.getElementById("nRestbp1").value = val02;
-                                  document.getElementById("nRestbp2").value = val02;
-                                  val03 = document.getElementById("nThalach1").defaultValue;
-                                  document.getElementById("nThalach1").value = val03;
-                                  document.getElementById("nThalach2").value = val03;
-                                  val04 = document.getElementById("nCa1").defaultValue;
-                                  document.getElementById("nCa1").value = val04;
-                                  document.getElementById("nCa2").value = val04;
-                                  val05 = document.getElementById("nCp1").defaultValue;
-                                  document.getElementById("nCp1").value = val05;
-                                  document.getElementById("nCp2").value = val05;
-                                  val06 = document.getElementById("nSlope1").defaultValue;
-                                  document.getElementById("nSlope1").value = val06;
-                                  document.getElementById("nSlope2").value = val06;
-                                  val07 = document.getElementById("nThal1").defaultValue;
-                                  document.getElementById("nThal1").value = val07;
-                                  document.getElementById("nThal2").value = val07;
-                              }
+                            if (index === 1) {
+                                val01 = value;
+                            } else if (index === 2) {
+                                val02 = value;
+                            } else if (index === 3) {
+                                val03 = value;
+                            } else if (index === 4) {
+                                val04 = value;
+                            } else if (index === 5) {
+                                val05 = value;
+                            } else if (index === 6) {
+                                val06 = value;
+                            } else if (index === 7) {
+                                val07 = value;
+                            } else if (index === -1) {
+                                // Set everything back to default state:
+                                val01 = document.getElementById("nSex1").defaultValue;
+                                document.getElementById("nSex1").value = val01;
+                                document.getElementById("nSex2").value = val01;
+                                val02 = document.getElementById("nRestbp1").defaultValue;
+                                document.getElementById("nRestbp1").value = val02;
+                                document.getElementById("nRestbp2").value = val02;
+                                val03 = document.getElementById("nThalach1").defaultValue;
+                                document.getElementById("nThalach1").value = val03;
+                                document.getElementById("nThalach2").value = val03;
+                                val04 = document.getElementById("nCa1").defaultValue;
+                                document.getElementById("nCa1").value = val04;
+                                document.getElementById("nCa2").value = val04;
+                                val05 = document.getElementById("nCp1").defaultValue;
+                                document.getElementById("nCp1").value = val05;
+                                document.getElementById("nCp2").value = val05;
+                                val06 = document.getElementById("nSlope1").defaultValue;
+                                document.getElementById("nSlope1").value = val06;
+                                document.getElementById("nSlope2").value = val06;
+                                val07 = document.getElementById("nThal1").defaultValue;
+                                document.getElementById("nThal1").value = val07;
+                                document.getElementById("nThal2").value = val07;
+                            }
 
-                              // Standardize the continuous features:
-                              var srbp_val     = (val02-131.7157)/17.7478;
-                              var sthalach_val = (val03-149.3278)/23.1211;
-                              var sca_val      = (val04-0.6722)/3.0;
+                            // Standardize the continuous features:
+                            let srbp_val = (val02 - 131.7157) / 17.7478;
+                            let sthalach_val = (val03 - 149.3278) / 23.1211;
+                            let sca_val = (val04 - 0.6722) / 3.0;
 
-                              // Disentangle the categorical features:
-                              var cp_contr = 0.0;
-                              if (val05 == 1) {
-                                  cp_contr = -2.2318;
-                              } else if (val05 == 2) {
-                                  cp_contr = -1.2681;
-                              } else if (val05 == 3) {
-                                  cp_contr = -2.1124;
-                              }
-                              var slope_contr = 0.0;
-                              if (val06 == 1) {slope_contr = -1.4726;}
-                              var thal_contr = 0.0;
-                              if(val07 == 1) {thal_contr = 1.5009;}
+                            // Disentangle the categorical features:
+                            let cp_contr = 0.0;
+                            if (val05 === 1) {
+                                cp_contr = -2.2318;
+                            } else if (val05 === 2) {
+                                cp_contr = -1.2681;
+                            } else if (val05 === 3) {
+                                cp_contr = -2.1124;
+                            }
+                            let slope_contr = 0.0;
+                            if (val06 === 1) {
+                                slope_contr = -1.4726;
+                            }
+                            let thal_contr = 0.0;
+                            if (val07 === 1) {
+                                thal_contr = 1.5009;
+                            }
 
-                              // Compute log-odds, then probability:
-                              var scprod = 1.4361*val01 + 0.4415*srbp_val - 0.4431*sthalach_val + 3.7984*sca_val + cp_contr + slope_contr + thal_contr;
-                              var drec   = 1.0/(1.0+Math.exp(-scprod));
-                              var drecs  = height0*drec;
-                              drec       *= 100;
+                            // Compute log-odds, then probability:
+                            let scprod = 1.4361 * val01 + 0.4415 * srbp_val - 0.4431 * sthalach_val + 3.7984 * sca_val + cp_contr + slope_contr + thal_contr;
+                            let drec = 1.0 / (1.0 + Math.exp(-scprod));
+                            let drecs = height0 * drec;
+                            drec *= 100;
 
-                              // Update plot:
-                              rcolor     = percentToRGB(drec);
-                              holder.select("rect")
-                                  .attr("y",y0+height0-drecs)
-                                  .attr("height",drecs)
-                                  .style("fill", rcolor);
+                            // Update plot:
+                            let rcolor = percentToRGB(drec);
+                            holder.select("rect")
+                                .attr("y", y0 + height0 - drecs)
+                                .attr("height", drecs)
+                                .style("fill", rcolor);
 
-                              holder.select("text")
-                                  .text(function(){return parseFloat(Math.round(drec * 100) / 100).toFixed(2)+"%";});
+                            holder.select("text")
+                                .text(function () {
+                                    return parseFloat(Math.round(drec * 100) / 100).toFixed(2) + "%";
+                                });
 
-                          }
+                        }
 
-                          function percentToRGB(percent) {
-                              if (percent === 100) {
-                                  percent = 99
-                              }
-                              var r, g, b;
+                        function percentToRGB(percent) {
+                            if (percent === 100) {
+                                percent = 99
+                            }
+                            let r, g, b;
 
-                              if (percent < 50) {
-                                  // green to yellow
-                                  r = Math.floor(255 * (percent / 50));
-                                  g = 255;
+                            if (percent < 50) {
+                                // green to yellow
+                                r = Math.floor(255 * (percent / 50));
+                                g = 255;
 
-                              } else {
-                                  // yellow to red
-                                  r = 255;
-                                  g = Math.floor(255 * ((50 - percent % 50) / 50));
-                              }
-                              b = 0;
+                            } else {
+                                // yellow to red
+                                r = 255;
+                                g = Math.floor(255 * ((50 - percent % 50) / 50));
+                            }
+                            b = 0;
 
-                              return "rgb(" + r + "," + g + "," + b + ")";
-                          }
-                      </script>
-                  </div>
-              </div>
-              <div class="clear"></div>
-          </div>
-      </div>
-    </section>
-    <!-- END section -->
+                            return "rgb(" + r + "," + g + "," + b + ")";
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>
+<!-- END section -->
 
-     <section class="probootstrap-section probootstrap-bg-light" data-section="analysis" id="analysis">
-      <div class="container">
+<section class="probootstrap-section probootstrap-bg-light" data-section="analysis" id="analysis">
+    <div class="container">
         <div class="row text-center mb100">
-          <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
-            <h2 class="mb30 text-black probootstrap-heading">Analysis Results Based on Dataset Available</h2>
-            <p>Model's accuracy is 87.3 +- 1.4%. The following are the results of analysis done on the available heart disease dataset. Each graph shows the result based on different attributes.</p>
-            <p>Green box indicates No Disease. Red box indicates Disease.</p>
-            <img src="img/flow.jpg" class="img-responsive probootstrap-shadow" alt="Flow of Analysis">
-          </div>
+            <div class="col-md-8 col-md-offset-2 probootstrap-section-heading">
+                <h2 class="mb30 text-black probootstrap-heading">Analysis Results Based on Dataset Available</h2>
+                <p>Model's accuracy is 87.3 +- 1.4%. The following are the results of analysis done on the available
+                    heart disease dataset. Each graph shows the result based on different attributes.</p>
+                <p>Green box indicates No Disease. Red box indicates Disease.</p>
+                <img alt="Flow of Analysis" class="img-responsive probootstrap-shadow" src="img/flow.jpg">
+            </div>
         </div>
         <!-- END row -->
         <div class="row">
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/age.jpg" class="img-responsive probootstrap-shadow" alt="Age">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Age" class="img-responsive probootstrap-shadow" src="img/plots/age.jpg">
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/angina.jpg" class="img-responsive probootstrap-shadow" alt="Excercise Induced Angina">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Excercise Induced Angina" class="img-responsive probootstrap-shadow"
+                         src="img/plots/angina.jpg">
+                </div>
             </div>
-          </div>
-          <div class="clearfix visible-sm-block"></div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/chestpain.jpg" class="img-responsive probootstrap-shadow" alt="Type of Chest Pain">
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Type of Chest Pain" class="img-responsive probootstrap-shadow"
+                         src="img/plots/chestpain.jpg">
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/depression.jpg" class="img-responsive probootstrap-shadow" alt="ST Depression Induced by Excercise">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="ST Depression Induced by Excercise" class="img-responsive probootstrap-shadow"
+                         src="img/plots/depression.jpg">
+                </div>
             </div>
-          </div>
-          <div class="clearfix visible-sm-block"></div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/fastingsugar.jpg" class="img-responsive probootstrap-shadow" alt="Fasting Blood Sugar">
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Fasting Blood Sugar" class="img-responsive probootstrap-shadow"
+                         src="img/plots/fastingsugar.jpg">
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/fluoroscopy.jpg" class="img-responsive probootstrap-shadow" alt="Major Vessels Colored by Fluoroscopy">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Major Vessels Colored by Fluoroscopy" class="img-responsive probootstrap-shadow"
+                         src="img/plots/fluoroscopy.jpg">
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/peak.jpg" class="img-responsive probootstrap-shadow" alt="Slope of Peak Excercise ST Segment">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Slope of Peak Excercise ST Segment" class="img-responsive probootstrap-shadow"
+                         src="img/plots/peak.jpg">
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/restecg.jpg" class="img-responsive probootstrap-shadow" alt="Rest ECG">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Rest ECG" class="img-responsive probootstrap-shadow" src="img/plots/restecg.jpg">
+                </div>
             </div>
-          </div>
-          <div class="clearfix visible-sm-block"></div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/restingbp.jpg" class="img-responsive probootstrap-shadow" alt="Resting Blood Pressure">
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Resting Blood Pressure" class="img-responsive probootstrap-shadow"
+                         src="img/plots/restingbp.jpg">
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/serumchol.jpg" class="img-responsive probootstrap-shadow" alt="Serum Cholestrol">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Serum Cholestrol" class="img-responsive probootstrap-shadow"
+                         src="img/plots/serumchol.jpg">
+                </div>
             </div>
-          </div>
-          <div class="clearfix visible-sm-block"></div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/sex.jpg" class="img-responsive probootstrap-shadow" alt="Sex">
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Sex" class="img-responsive probootstrap-shadow" src="img/plots/sex.jpg">
+                </div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/thaliumstress.jpg" class="img-responsive probootstrap-shadow" alt="Thalium Stress Test Result">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Thalium Stress Test Result" class="img-responsive probootstrap-shadow"
+                         src="img/plots/thaliumstress.jpg">
+                </div>
             </div>
-          </div>
-          <div class="clearfix visible-sm-block"></div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="probootstrap-testimonial">
-              <img src="img/plots/thaliumtest.jpg" class="img-responsive probootstrap-shadow" alt="Thalium Test Max. Stress Rate">
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="probootstrap-testimonial">
+                    <img alt="Thalium Test Max. Stress Rate" class="img-responsive probootstrap-shadow"
+                         src="img/plots/thaliumtest.jpg">
+                </div>
             </div>
-          </div>
 
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section class="probootstrap-section probootstrap-cta">
-      <div class="container">
+<section class="probootstrap-section probootstrap-cta">
+    <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-2 text-center">
-            <h2 class="probootstrap-heading">Future Scope</h2>
-            <p class="probootstrap-sub-heading">We can embed this application into a real time system which has sensors that measure certain attributes. This will help us get prediction and alerts in real time based on the body condition of the user.</p>
-            <p><a href="https://github.com/akshah1997/Heart-Disease-Analysis-and-Prediction-Front-End.git" class="btn btn-black" target="_blank">Contribute to Project <span class="icon icon-github2"></a></p>
-          </div>
+            <div class="col-md-8 col-md-offset-2 text-center">
+                <h2 class="probootstrap-heading">Future Scope</h2>
+                <p class="probootstrap-sub-heading">We can embed this application into a real time system which has
+                    sensors that measure certain attributes. This will help us get prediction and alerts in real time
+                    based on the body condition of the user.</p>
+                <p><a class="btn btn-black"
+                      href="https://github.com/akshah1997/Heart-Disease-Analysis-and-Prediction-Front-End.git"
+                      target="_blank">Contribute to Project <span
+                        class="icon icon-github2"></span></a></p>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section class="probootstrap-section probootstrap-bg-light" data-section="contact">
-      <div class="container">
+<section class="probootstrap-section probootstrap-bg-light" data-section="contact">
+    <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <form action="" class="probootstrap-form">
-              <h2 class="text-black mt0">Get In Touch</h2>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="number" class="form-control" placeholder="Your Phone">
-              </div>
-              <div class="form-group">
-                <textarea class="form-control"cols="30" rows="10" placeholder="Write a Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Send Message">
-              </div>
-            </form>
-          </div>
-          <div class="col-md-3 col-md-push-1">
-            <ul class="probootstrap-contact-details">
-              <li>
-                <span class="text-uppercase">Email <span class="icon icon-email"></span></span>
-                akshah1997@gmail.com <br>
-                sagar010797@gmail.com
-              </li>
-              <li>
-                <span class="text-uppercase">GitHub <span class="icon icon-github2"></span></span>
-                <a href="https://github.com/akshah1997" target="_blank">Akshay Shah</a> <br>
-                <a href="https://github.com/Byte7" target="_blank">Sagar Patil</a> <br>
-              </li>
-            </ul>
-          </div>
+            <div class="col-md-6">
+                <form action="" class="probootstrap-form">
+                    <h2 class="text-black mt0">Get In Touch</h2>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Your Name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Your Email" type="email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Your Phone" type="number">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" cols="30" placeholder="Write a Message" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" value="Send Message">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3 col-md-push-1">
+                <ul class="probootstrap-contact-details">
+                    <li>
+                        <span class="text-uppercase">Email <span class="icon icon-email"></span></span>
+                        akshah1997@gmail.com <br>
+                        sagar010797@gmail.com
+                    </li>
+                    <li>
+                        <span class="text-uppercase">GitHub <span class="icon icon-github2"></span></span>
+                        <a href="https://github.com/akshah1997" target="_blank">Akshay Shah</a> <br>
+                        <a href="https://github.com/Byte7" target="_blank">Sagar Patil</a> <br>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="probootstrap-footer">
-      <div class="container text-center">
+<footer class="probootstrap-footer">
+    <div class="container text-center">
         <div class="row">
-          <div class="col-md-12">
-            <a href="#home" class="probootstrap-link">Back to top <span class="icon icon-align-top"></span></a> <br>
-            &copy; 2017. All Rights Reserved. <br> Designed &amp; Developed by <a href="https://github.com/akshah1997" target="_blank">Akshay Shah <span class="icon icon-github"></span></a> &amp; <a href="https://github.com/Byte7" target="_blank">Sagar Patil <span class="icon icon-github"></span></a>
-          </div>
+            <div class="col-md-12">
+                <a class="probootstrap-link" href="#home">Back to top <span class="icon icon-align-top"></span></a> <br>
+                &copy; 2017. All Rights Reserved. <br> Designed &amp; Developed by <a
+                    href="https://github.com/akshah1997" target="_blank">Akshay Shah <span
+                    class="icon icon-github"></span></a> &amp; <a href="https://github.com/Byte7" target="_blank">Sagar
+                Patil <span class="icon icon-github"></span></a>
+            </div>
         </div>
-      </div>
-    </footer>
+    </div>
+</footer>
 
-    <script src="js/scripts.min.js"></script>
-    <script src="js/custom.js"></script>
+<script src="js/scripts.min.js"></script>
+<script src="js/custom.js"></script>
 
-  </body>
+</body>
 </html>
