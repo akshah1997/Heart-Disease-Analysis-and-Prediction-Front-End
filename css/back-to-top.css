@@ -1,0 +1,13 @@
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    font-size: 1.7em;
+    cursor: pointer;
+    padding: 0.8% 1.2%;
+    border-radius: 60%;
+}
